@@ -1,13 +1,34 @@
-<polymer-element name="so-question" attributes="owner qtitle tags score answered">
+<polymer-element name="so-question" attributes="owner qtitle tags score answered qlink olink">
   <template>
+  	<style>
+  	h1 {
+  		font-size: 24px;
+  	}
+
+  	div {
+  		margin: 5px;
+  		padding-left: 10px;
+  	}
+
+  	li {
+  		list-style: none;
+  		display: inline-block;
+  		padding: 5px;
+  	}
+
+  	small {
+  		float: right;
+  	}
+  	</style>
 	<div class="{{answered}}">
-		<h1>{{qtitle}}<small>{{owner}}</small></h1>
+		<h1><a href="{{qlink}}" target="_blank">{{qtitle}}</a></h1>
 		<p>
 			<ul>
 				<template repeat="{{tag in tags}}">
 					<li>{{tag}}</li>
 				</template>
 			</ul>
+			<small><a href="{{olink}}">{{owner}}</a></small>
 		</p>
 	</div>
   </template>

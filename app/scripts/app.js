@@ -24,10 +24,9 @@ define(['d3', 'xhr'], function (d3, xhr) {
 	function pollForQuestions() {
 		getQuestions(function(err, data) {
 			if (!err) {
-				var d = d3.select('body').selectAll('so-question').data(data, function(d) {
+				var d = d3.select('.container').selectAll('so-question').data(data, function(d) {
 					return d.question_id
 				});
-				// d.call(fillQuestions);
 				d.enter().insert('so-question', ':first-child').call(fillQuestions);
 				d.exit().remove();
 			}
@@ -44,6 +43,8 @@ define(['d3', 'xhr'], function (d3, xhr) {
 			this.owner = d.owner.display_name;
 			this.answered = d.is_answered ? 'answered' : '';
 			this.tags = d.tags;
+			this.qlink = d.link;
+			this.olink = d.owner.link;
 		})
 	}
 });
