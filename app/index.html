@@ -12,17 +12,22 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="styles/bootstrap.css">
         <!-- endbuild -->
 
         <!-- TODO: polymer should allow link itemprops so we can import stuff outside 
         of the head... -->
-        <!-- build:js scripts/vendor.js -->
-        <!-- bower:js -->
-        <script type="text/javascript" src="bower_components/polymer/polymer.min.js"></script>
+
         <!-- build:js scripts/main.js -->
         <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
         <!-- endbuild -->
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script type="text/javascript" src="bower_components/polymer/polymer.min.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
         <script>
         Polymer.require = function(tag, deps, func) {
           require(deps, function() {
@@ -30,8 +35,7 @@
           });
         };
         </script>
-        <!-- endbower -->
-        <!-- endbuild -->
+
         <link rel="import" href="components/so-question/so-question.html">
         <link rel="import" href="components/so-questionlist/so-questionlist.html">
     </head>
