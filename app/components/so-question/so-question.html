@@ -1,0 +1,15 @@
+<polymer-element name="so-question" attributes="owner qtitle tags score answered">
+  <template>
+	<div class="{{answered}}">
+		<h1>{{qtitle}}<small>{{owner}}</small></h1>
+		<p>
+			<ul>
+				<template repeat="{{tag in tags}}">
+					<li>{{tag}}</li>
+				</template>
+			</ul>
+		</p>
+	</div>
+  </template>
+  <script src="scripts/so-question.js"></script>
+</polymer-element>
