@@ -25,3 +25,4 @@ todo.enter().append('todo-item').attr('task', function(d) { return d; });
 todo.exit().remove();
 ```
 
+although data binding accomplishes much the same thing...  is there really a use case for d3 here?
